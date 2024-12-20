@@ -17,7 +17,6 @@ function App() {
     </button>
   );
 
-  const aboutText = "I am a software engineer based in Chicago, Illinois. I earned my B.S. in Computer Science and minored in Applied Mathematics at the Illinois Institute of Technology. I'm hardworking and passionate about building efficient solutions for modern problems. I especially love learning about the intricacies of computer systems and seeing what makes them tick.";
 
   return (
     <body>
@@ -82,7 +81,7 @@ function App() {
         </h1>
 
         <p class="about-me">
-          {aboutText}
+        I am a software engineer based in Chicago, Illinois. I earned my B.S. in Computer Science and minored in Applied Mathematics at the Illinois Institute of Technology. I'm hardworking and passionate about building efficient solutions for modern problems. I especially love learning about the intricacies of computer systems and seeing what makes them tick.
         </p>
 
       </div>
