@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/website/static/css/main.1b77832b.css",
+    "main.js": "/website/static/js/main.28e081d1.js",
+    "static/js/453.bb828c5d.chunk.js": "/website/static/js/453.bb828c5d.chunk.js",
+    "static/media/email.png": "/website/static/media/email.af214ba512e2d3617b04.png",
+    "static/media/Pietrzyk_Piotr_Software_Development_Resume.pdf": "/website/static/media/Pietrzyk_Piotr_Software_Development_Resume.9d2765acf6637be3db37.pdf",
+    "static/media/github.png": "/website/static/media/github.7fc7253dea789660f761.png",
+    "static/media/linkedin.png": "/website/static/media/linkedin.aeb8d8f57cb7ed0ac5a8.png",
+    "static/media/OxygenMono-Regular.woff": "/website/static/media/OxygenMono-Regular.60fb5882dc808e6fae5b.woff",
+    "static/media/OCR-a___.woff": "/website/static/media/OCR-a___.f0e52044d9242bc1d0b0.woff",
+    "index.html": "/website/index.html",
+    "main.1b77832b.css.map": "/website/static/css/main.1b77832b.css.map",
+    "main.28e081d1.js.map": "/website/static/js/main.28e081d1.js.map",
+    "453.bb828c5d.chunk.js.map": "/website/static/js/453.bb828c5d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1b77832b.css",
+    "static/js/main.28e081d1.js"
+  ]
+}
