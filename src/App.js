@@ -7,7 +7,6 @@ import email from './media/email.png';
 import resume from './media/Pietrzyk_Piotr_Software_Development_Resume.pdf'
 
 
-
 function App() {
 
   const githubButton = (
@@ -28,7 +27,17 @@ function App() {
         </Helmet>
       </div>
 
-      <div class="sidebar">
+
+      <nav class="hide-on-desktop">
+        <div class="ham-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+
+
+      <div class="sidebar hide-on-mobile">
         <a href="#home">home</a>
         <a href="#about">who am i?</a>
         <a href="#experience">my experience</a>
@@ -81,7 +90,7 @@ function App() {
         </h1>
 
         <p class="about-me">
-        I am a software engineer based in Chicago, Illinois. I earned my B.S. in Computer Science and minored in Applied Mathematics at the Illinois Institute of Technology. I'm hardworking and passionate about building efficient solutions for modern problems. I especially love learning about the intricacies of computer systems and seeing what makes them tick.
+          I am a software engineer based in Chicago, Illinois. I earned my B.S. in Computer Science and minored in Applied Mathematics at the Illinois Institute of Technology. I'm hardworking and passionate about building efficient solutions for modern problems. I especially love learning about the intricacies of computer systems and seeing what makes them tick.
         </p>
 
       </div>
@@ -131,7 +140,7 @@ function App() {
               </p>
             </div>
           </div>
-        </div> 
+        </div>
 
       </div>
 
@@ -216,7 +225,7 @@ function App() {
                 <p class="glowing-text silver">Artificial Intelligence</p>     
               </div>
               <p>A sudoku solver AI which I built in Python for a class project. <br></br> <br></br>
-              Implemented constraint satisfaction with forward checking and minimum remaining values (MRV) heuristics for optimized performance. <br></br> <br></br>
+              Implemented constraint satisfaction with forward checking and minimum-remaining-values (MRV) heuristics for optimized performance. <br></br> <br></br>
               Constraints inherent to the sudoku puzzle are integrated into the algorithm, with forward checking preventing inconsistencies during number assignments and MRV heuristics prioritizing variables with the fewest remaining options. <br></br> <br></br>
               This project enhanced my understanding of artificial intelligence and its application to solving complex problems.
               </p>

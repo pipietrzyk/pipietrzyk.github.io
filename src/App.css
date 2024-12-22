@@ -15,6 +15,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* Disables unnecessary horizontal scroll on mobile */
 }
 
 p, h1, h2, h3, h4 {
@@ -28,6 +29,8 @@ body {
   background-color: #1a1c20;
   color: white;
   font-family: monospace;
+  position: relative; /* Disables unnecessary horizontal scroll on mobile */
+  overflow-x: hidden; /* Disables unnecessary horizontal scroll on mobile */
 }
 
 button:hover {
@@ -38,13 +41,11 @@ button:hover {
 
 
 
-
-/* TODO: Make it resize for smaller screen sizes */
+/* TODO: Make the sidebar fit properly on all screen sizes */
 .sidebar {
   margin: 0;
   padding: 0;
   width: 10vw;
-  /*background-color: #2d3544; */
   position: fixed;
   right: 0;
   height: 100vh;
@@ -91,6 +92,36 @@ button:hover {
   transform: scale(1.5);
 }
 
+/* Hamburger menu for mobile */
+@media (max-width: 800px) {
+  .hide-on-mobile {
+    display: none;
+  }
+
+  nav {
+    padding: 50px;
+    background-color: #16181b;
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    z-index: 1000; /* Makes it appear on top of everything else */
+  }
+
+  .ham-menu {
+    
+  }
+
+  .ham-menu span {
+    
+  }
+}
+
+@media (min-width: 800px) {
+  .hide-on-desktop {
+    display: none;
+  }
+}
+
 
 
 
@@ -98,21 +129,38 @@ button:hover {
 
 .padding-between-sections {
   height:15vh;
-  /*background-color: orange;*/
+}
+
+@media (max-width: 800px) {
+  .padding-between-sections {
+    height: 10vh;
+  }
 }
 
 .section-title {
   text-align: center;
-  font-size: 3vw;
+  font-size: 60px;
+}
+
+@media (max-width: 800px) {
+  .section-title {
+    font-size: 30px;
+  }
 }
 
 .generic-section {
-  font-size: 1vw;
+  font-size: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   row-gap: 2.5vh;
+}
+
+@media (max-width: 800px) {
+  .generic-section {
+    font-size: 12px;
+  }
 }
 
 
@@ -124,7 +172,6 @@ button:hover {
   height: 65vh; 
 }
 
-/* Flex boxes guide: https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flexbox-properties */
 .header { 
   height:35vh;
   display: flex;
@@ -135,12 +182,23 @@ button:hover {
 }
 
 .header h1 {
-  font-size: 3vw;
+  font-size: 60px;
 }
 
 .header h2 {
-  font-size: 2vw;
+  font-size: 40px;
   padding-bottom: 10vh;
+}
+
+@media (max-width: 800px) {
+  .header h1 {
+    font-size: 30px;
+  }
+
+  .header h2 {
+    font-size: 20px;
+    padding-bottom: 20vh;
+  }
 }
 
 
@@ -154,18 +212,21 @@ button:hover {
   text-align: left;
 }
 
+@media (max-width: 800px) {
+  .about-me {
+    max-width: 85vw;
+  } 
+}
 
 
 
 
-
-/* These stylings deal with the content on the experience page */
-/* TODO: Resize for smaller screen sizes */
+/* TODO: MAKE A CLICKABLE BUTTON THAT OPENS UP AND FILLS THE SCREEN FOR MOBILE */
 
 /* The actual timeline (the vertical ruler) */
 .timeline {
   position: relative;
-  max-width: 1200px;
+  max-width: 62.5vw;
   margin: 0 auto;
 }
 
@@ -205,7 +266,7 @@ button:hover {
 
 /* Place the container to the left */
 .left {
-  left: -6.75%;
+  left: -80px;
 }
 
 /* Place the container to the right */
@@ -270,15 +331,14 @@ button:hover {
 
 
 
-/* These stylings deal with the content on the projects page */
-
 /* Puts together all the projects into one container */
 .projects-showcase {
   padding-top: 50px;
   display: flex;
   flex-flow: column;
   row-gap: 75px;
-  margin-left: 22.5vw;
+  justify-content: center;
+  /* margin-left: 22.5vw; */
 }
 
 /* An individual project container */
@@ -286,9 +346,9 @@ button:hover {
   display: flex;
   flex-flow: row;
   column-gap: 70px;
+  justify-content: center;
 }
 
-/* TODO: Change the size based on screen specs */
 .project img {
   height: 400px;
   width: 450px;
@@ -301,13 +361,43 @@ button:hover {
   margin-left: 250px;
 }
 
-/* TODO: MAKE IT SO THE WIDGETS CAN FIT PROPERLY */
+@media (max-width: 800px) {
+  .projects-showcase {
+    row-gap: 40px;
+  }
+
+  .project {
+    column-gap: 20px;
+  }
+
+  /* TODO: Make images clickable on mobile and have them increase in size */
+  .project img {
+    height: 100px;
+    width: 100px;
+    border-radius: 4px;
+  }
+
+  .project .img-phone {
+    width: 50px;
+    margin-left: 50px;
+  }
+
+  .fullscreen {
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .title-and-widgets {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
   column-gap: 12px;
-  width: 700px; /* Change this for mobile (?) */
+  width: 700px;
 }
 
 .description {
@@ -318,6 +408,17 @@ button:hover {
   max-width: 35vw;
   text-align: left;
   padding: 10px 0px 20px 0px;
+}
+
+@media (max-width: 800px) {
+  .title-and-widgets {
+    width: 200px;
+    row-gap: 2px;
+  }
+
+  .description > p {
+    max-width: 50vw;
+  }
 }
 
 .glowing-button {
@@ -335,6 +436,20 @@ button:hover {
   width: 20px;
   padding-right: 5px;
   padding-top: 3px;
+}
+
+@media (max-width: 800px) {
+  .glowing-button {
+    font-size: 8px;
+    text-align: center;
+  } 
+
+  .glowing-button img {
+    height: 10px;
+    width: 10px;
+    padding-right: 5px;
+    padding-top: 3px;
+  }
 }
 
 .glowing-button:hover {
@@ -379,9 +494,8 @@ button:hover {
   padding-bottom: 10px;
 }
 
-/* TODO: Move this around with padding so it looks overall nicer */
 .contact-container {
-  padding: 10px 45px 0px 0px;
+  padding: 10px 0px 0px 0px;
   display: flex;
   flex-direction: row;
   justify-content: center;
