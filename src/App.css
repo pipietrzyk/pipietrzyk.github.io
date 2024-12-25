@@ -30,18 +30,24 @@ body {
   color: white;
   font-family: monospace;
   position: relative; /* Disables unnecessary horizontal scroll on mobile */
-  overflow-x: hidden; /* Disables unnecessary horizontal scroll on mobile */
+  overflow: hidden; /* Disables unnecessary horizontal scroll on mobile */
 }
 
 button:hover {
   cursor: pointer;
 }
 
+@media (min-width: 800px) {
+  .hide-on-desktop {
+    display: none;
+  }
+}
 
 
 
 
-/* TODO: Make the sidebar fit properly on all screen sizes */
+
+/* TODO: Play around with sizing some more with vw in the different screen sizes */
 .sidebar {
   margin: 0;
   padding: 0;
@@ -79,7 +85,7 @@ button:hover {
 .socials {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .socials img {
@@ -92,36 +98,6 @@ button:hover {
   transform: scale(1.5);
 }
 
-/* Hamburger menu for mobile */
-@media (max-width: 800px) {
-  .hide-on-mobile {
-    display: none;
-  }
-
-  nav {
-    padding: 50px;
-    background-color: #16181b;
-    display: flex;
-    position: fixed;
-    width: 100vw;
-    z-index: 1000; /* Makes it appear on top of everything else */
-  }
-
-  .ham-menu {
-    
-  }
-
-  .ham-menu span {
-    
-  }
-}
-
-@media (min-width: 800px) {
-  .hide-on-desktop {
-    display: none;
-  }
-}
-
 
 
 
@@ -131,21 +107,9 @@ button:hover {
   height:15vh;
 }
 
-@media (max-width: 800px) {
-  .padding-between-sections {
-    height: 10vh;
-  }
-}
-
 .section-title {
   text-align: center;
   font-size: 60px;
-}
-
-@media (max-width: 800px) {
-  .section-title {
-    font-size: 30px;
-  }
 }
 
 .generic-section {
@@ -155,12 +119,6 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   row-gap: 2.5vh;
-}
-
-@media (max-width: 800px) {
-  .generic-section {
-    font-size: 12px;
-  }
 }
 
 
@@ -190,17 +148,6 @@ button:hover {
   padding-bottom: 10vh;
 }
 
-@media (max-width: 800px) {
-  .header h1 {
-    font-size: 30px;
-  }
-
-  .header h2 {
-    font-size: 20px;
-    padding-bottom: 20vh;
-  }
-}
-
 
 
 
@@ -212,16 +159,10 @@ button:hover {
   text-align: left;
 }
 
-@media (max-width: 800px) {
-  .about-me {
-    max-width: 85vw;
-  } 
-}
 
 
 
 
-/* TODO: MAKE A CLICKABLE BUTTON THAT OPENS UP AND FILLS THE SCREEN FOR MOBILE */
 
 /* The actual timeline (the vertical ruler) */
 .timeline {
@@ -338,7 +279,6 @@ button:hover {
   flex-flow: column;
   row-gap: 75px;
   justify-content: center;
-  /* margin-left: 22.5vw; */
 }
 
 /* An individual project container */
@@ -361,37 +301,6 @@ button:hover {
   margin-left: 250px;
 }
 
-@media (max-width: 800px) {
-  .projects-showcase {
-    row-gap: 40px;
-  }
-
-  .project {
-    column-gap: 20px;
-  }
-
-  /* TODO: Make images clickable on mobile and have them increase in size */
-  .project img {
-    height: 100px;
-    width: 100px;
-    border-radius: 4px;
-  }
-
-  .project .img-phone {
-    width: 50px;
-    margin-left: 50px;
-  }
-
-  .fullscreen {
-    width: 100vw;
-    height: 100vw;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
 .title-and-widgets {
   display: flex;
   flex-flow: row;
@@ -410,17 +319,6 @@ button:hover {
   padding: 10px 0px 20px 0px;
 }
 
-@media (max-width: 800px) {
-  .title-and-widgets {
-    width: 200px;
-    row-gap: 2px;
-  }
-
-  .description > p {
-    max-width: 50vw;
-  }
-}
-
 .glowing-button {
   color: white;
   background-color: #0f0f0f;
@@ -436,20 +334,6 @@ button:hover {
   width: 20px;
   padding-right: 5px;
   padding-top: 3px;
-}
-
-@media (max-width: 800px) {
-  .glowing-button {
-    font-size: 8px;
-    text-align: center;
-  } 
-
-  .glowing-button img {
-    height: 10px;
-    width: 10px;
-    padding-right: 5px;
-    padding-top: 3px;
-  }
 }
 
 .glowing-button:hover {

@@ -1,0 +1,52 @@
+@media (min-width: 800px) and (max-width: 1200px) {
+    /* TODO: COME BACK TO THIS LATER */
+    .sidebar {
+        width: 14vw;
+    }
+
+    .sidebar a {
+        font-size: 1.5vw;
+    }
+
+
+
+
+    
+    .generic-section {
+        font-size: 15px;
+    }
+
+
+
+
+
+    .socials img {
+        height: 15px;
+        width: 15px;
+    }
+
+
+
+
+
+
+    .project img {
+        height: 300px;
+        width: 350px;
+    }
+
+    .project .img-phone {
+        width: 175px;
+        margin-left: 175px;
+    }
+
+    .glowing-button img {
+        height: 15px;
+        width: 15px;
+    }
+
+    .title-and-widgets {
+        width: 400px;
+    }
+
+}
