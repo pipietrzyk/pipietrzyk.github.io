@@ -1,17 +1,4 @@
 @media (min-width: 800px) and (max-width: 1200px) {
-    /* TODO: COME BACK TO THIS LATER */
-    .sidebar {
-        width: 14vw;
-    }
-
-    .sidebar a {
-        font-size: 1.5vw;
-    }
-
-
-
-
-    
     .generic-section {
         font-size: 15px;
     }
@@ -20,15 +7,30 @@
 
 
 
-    .socials img {
-        height: 15px;
-        width: 15px;
+
+    .about-me {
+        max-width: 68vw;
     }
 
 
 
 
 
+
+
+    .generic-section .timeline {
+        align-self: flex-start;
+        max-width: 85vw;
+    }
+
+
+
+
+
+    
+    .project {
+        column-gap: 20px;
+    }
 
     .project img {
         height: 300px;
@@ -46,7 +48,109 @@
     }
 
     .title-and-widgets {
-        width: 400px;
+        width: 35vw;
     }
 
 }
+
+@media (min-width: 1048px) and (max-width: 1200px) {
+    .sidebar {
+        width: 14vw;
+    }
+
+    .sidebar a {
+        font-size: 1.5vw;
+    }
+}
+
+/* On smaller-sized tablets use a hamburger menu */
+@media (min-width: 801px) and (max-width: 1047px) {
+    .hide-on-mobile {
+        display: none;
+    }
+
+
+
+    /* This part will be clickable */
+    .hamburger-menu-btn {
+        z-index: 100;
+        position: fixed;
+        right: 15px;
+        top: 15px;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+    }
+
+    .hamburger-menu-icon {
+        position: relative;
+        width: 30px;
+        height: 5px;
+        background: white;
+        border-radius: 2px;
+        transition: all .5s ease-in-out;
+    }
+
+    .hamburger-menu-icon::before,
+    .hamburger-menu-icon::after {
+        content: '';
+        position: absolute;
+
+        width: 30px;
+        height: 5px;
+        background: white;
+        border-radius: 2px;
+        transition: all .5s ease-in-out;
+    }
+
+    .hamburger-menu-icon::before {
+        transform: translateY(-10px);
+    }
+
+    .hamburger-menu-icon::after {
+        transform: translateY(10px);
+    }
+
+    /* Animation for hamburger button to change into an X*/
+    .hamburger-menu-btn.open .hamburger-menu-icon {
+        transform: translateX(-50px);
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .hamburger-menu-btn.open .hamburger-menu-icon::before {
+        transform: rotate(45deg) translate(35px, -35px);
+    }
+
+    .hamburger-menu-btn.open .hamburger-menu-icon::after {
+        transform: rotate(-45deg) translate(35px, 35px);
+    }
+    
+
+
+    .sidebar {
+        transition: all .5s ease-in-out;
+        right: -40vw; /* Make the sidebar hidden off screen */
+        background-color: #16181b;
+        z-index: 2; /* Appear above the rest of the website content */
+        width: 40vw;
+    }
+
+    .sidebar.open {
+        right: 0;
+    }
+
+    .sidebar a {
+        font-size: 10px;
+    }
+
+    .socials img {
+        height: 15px;
+        width: 15px;
+    }
+}
+

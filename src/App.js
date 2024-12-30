@@ -5,6 +5,10 @@ import './App-Mobile.css'
 import { Helmet } from 'react-helmet';
 import React, { useState } from 'react';
 
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+/* https://www.npmjs.com/package/react-vertical-timeline-component?activeTab=readme */
+
 import github from './media/github.png';
 import linkedin from './media/linkedin.png';
 import email from './media/email.png';
@@ -19,6 +23,20 @@ function App() {
       Check it out on GitHub!
     </button>
   );
+
+  const iconStyle = {
+    background: '#3bb9ac',
+    color: 'white'
+  };
+
+  const contentStyle = {
+    background: 'rgb(13, 15, 17)', 
+    color: 'white'
+  };
+
+  const contentArrowStyle = {
+    borderRight: '7px solid rgb(13, 15, 17)'
+  };
 
   /* JS logic for the hamburger menu button */
   const [menuOpen, setMenuOpen] = useState(false);
@@ -36,7 +54,6 @@ function App() {
           <link rel="icon" href="./logo.png"/>
         </Helmet>
       </div>
-
 
       <div class={`hamburger-menu-btn ${menuOpen ? 'open' : ''}`} onClick={toggleMenu} >
         <div class="hamburger-menu-icon">
@@ -113,46 +130,59 @@ function App() {
           my experience
         </h1>
 
+
         <div class="timeline">
-          <div class="container left">
-            <div class="content">
-              <h2> Undergraduate Research Assistant </h2>
-              <h4>Illinois Institute of Technology</h4>
-              <h4>January 2024 - May 2024</h4>
-              <p class="hide-on-mobile"> Collaborating with a team of two fellow students, I conducted performance benchmarking and analysis of virtual machine function startup metrics. <br></br> <br></br>
+          <VerticalTimeline>
+            <VerticalTimelineElement
+            contentStyle={contentStyle}
+            contentArrowStyle={contentArrowStyle}
+            date="January 2024 - May 2024"
+            iconStyle={iconStyle}
+            shadowSize="large">
+
+              <h3>Undergraduate Research Assistant</h3>
+              <h4>@ Illinois Institute of Technology</h4>
+              <p>
+                Collaborating with a team of two fellow students, I conducted performance benchmarking and analysis of virtual machine function startup metrics. <br></br> <br></br>
                 Gained an in-depth understanding of the functions-as-a-service (FaaS) paradigm, where virtualized functions are dynamically scheduled by a resource manager to execute specific tasks and decommissioned upon task completion. <br></br> <br></br>
                 Through this experience, I developed a strong foundation in performance evaluation, serverless architectures, and emerging trends in cloud computing.
               </p>
-              <p class="hide-on-desktop">Tap here to show more!</p>
-            </div>
-          </div>
-          <div class="container right">
-            <div class="content">
-              <h2>IT Helpdesk Intern</h2>
-              <h4>The Walsh Group</h4>
-              <h4>April 2022 - August 2022</h4>
-              <p class="hide-on-mobile"> Primary responsibilities included updating and maintaining documentation for internal company processes as well as providing remote technical support to employees nationwide. <br></br> <br></br>
-              Developed a PowerShell script to automate the backup and remote upload of employee laptop files. <br></br> <br></br>
-              Collaborated with a team member to design and implement an inventory tracking system for internal equipment. <br></br> <br></br>
-              This experience enhanced my technical problem-solving skills, strengthened my ability to work collaboratively, and deepened my understanding of IT operations within a large organization.
+            </VerticalTimelineElement>
+
+            <VerticalTimelineElement
+            contentStyle={contentStyle}
+            contentArrowStyle={contentArrowStyle}
+            date="April 2022 - August 2022"
+            iconStyle={iconStyle}
+            shadowSize="large">
+
+              <h3>IT Helpdesk Intern</h3>
+              <h4>@ The Walsh Group</h4>
+              <p>
+                Primary responsibilities included updating and maintaining documentation for internal company processes as well as providing remote technical support to employees nationwide. <br></br> <br></br>
+                Developed a PowerShell script to automate the backup and remote upload of employee laptop files. <br></br> <br></br>
+                Collaborated with a team member to design and implement an inventory tracking system for internal equipment. <br></br> <br></br>
+                This experience enhanced my technical problem-solving skills, strengthened my ability to work collaboratively, and deepened my understanding of IT operations within a large organization.
               </p>
-              <p class="hide-on-desktop">Tap here to show more!</p>
-            </div>
-          </div>
-          <div class="container left">
-            <div class="content">
-              <h2>App Developer</h2>
-              <h4>After School Matters</h4>
-              <h4>September 2019 - January 2020</h4>
-              <p class="hide-on-mobile">
-              Developed a prototype mobile application leveraging expertise in HTML, CSS, and JavaScript. <br></br> <br></br>
-              Implemented Amazon Firebase as the server framework to securely manage and store user account information. <br></br> <br></br>
-              Collaborated with team members to refine functionality and ensure a user-friendly design.
+            </VerticalTimelineElement>
+            <VerticalTimelineElement
+            contentStyle={contentStyle}
+            contentArrowStyle={contentArrowStyle}
+            date="September 2019 - January 2020"
+            iconStyle={iconStyle}
+            shadowSize="large">
+
+              <h3>App Developer</h3>
+              <h4>@ After School Matters</h4>
+              <p>
+                Developed a prototype mobile application leveraging expertise in HTML, CSS, and JavaScript. <br></br> <br></br>
+                Implemented Amazon Firebase as the server framework to securely manage and store user account information. <br></br> <br></br>
+                Collaborated with team members to refine functionality and ensure a user-friendly design.
               </p>
-              <p class="hide-on-desktop">Tap here to show more!</p>
-            </div>
-          </div>
+            </VerticalTimelineElement>
+          </VerticalTimeline>
         </div>
+
 
       </div>
 
